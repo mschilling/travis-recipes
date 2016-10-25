@@ -1,0 +1,22 @@
+language: node_js
+matrix:
+  include:
+    - node_js: "6.0"
+sudo: required
+dist: trusty
+addons:
+  apt:
+    packages:
+    - nginx
+    - curl
+#before_install:
+
+before_script:
+  - sudo cp .travis_nginx.conf /etc/nginx/nginx.conf
+  - /etc/init.d/nginx restart
+script:
+  - curl http://localhost/
+#after_script:
+
+notifications:
+  email: false
