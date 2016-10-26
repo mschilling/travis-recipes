@@ -8,7 +8,6 @@ addons:
   apt:
     packages:
     - nginx
-    - nginx-extras
     - curl
 before_script:
   #Install self signed cert
