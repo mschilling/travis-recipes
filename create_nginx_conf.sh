@@ -1,6 +1,6 @@
 #!/bin/bash
 cat <<EOT >> nginx.conf
-user travis;
+user root;
 events {
     worker_connections  4096;  ## Default: 1024
 }
@@ -16,8 +16,8 @@ http {
         root `pwd`;
         listen 443 ssl;
         server_name localhost;
-        ssl_certificate /home/travis/build/cassshh/travis-recipes/ssl/server.crt;
-        ssl_certificate_key /home/travis/build/cassshh/travis-recipes/ssl/key.pem;
+        ssl_certificate `pwd`/ssl/server.crt;
+        ssl_certificate_key `pwd`/ssl/key.pem;
         ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
         ssl_ciphers HIGH:!aNULL:!MD5;
     }
