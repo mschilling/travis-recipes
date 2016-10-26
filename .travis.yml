@@ -19,6 +19,9 @@ before_script:
 script:
   - nginx -V
   - mkdir /home/travis/www
+  - ls -l /home/travis/www
+  - chown root /home/travis/www
+  - ls -l /home/travis/www
   - cp -r www/ /home/travis/www
   #Setup nginx
   - sudo cp .travis_nginx.conf /etc/nginx/nginx.conf
