@@ -1,6 +1,6 @@
 #!/bin/bash
 cat <<EOT >> nginx.conf
-user root;
+user travis;
 events {
     worker_connections  4096;  ## Default: 1024
 }
