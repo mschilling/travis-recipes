@@ -18,10 +18,8 @@ before_script:
   - sudo update-ca-certificates
 script:
   - nginx -V
-  - ls /usr/local/nginx
-  - ls /usr/local/nginx/html
-  - ls /etc/nginx
-  - cp -r . /usr/local/nginx/html
+  - mkdir /home/travis/www
+  - cp -r www/ /home/travis/www
   #Setup nginx
   - sudo cp .travis_nginx.conf /etc/nginx/nginx.conf
   - sudo nginx -c /etc/nginx/nginx.conf -t
