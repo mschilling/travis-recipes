@@ -10,8 +10,8 @@ addons:
     - nginx
     - curl
 before_script:
-  - export PATH=$(pwd)
-  - PATH
+  - export PATH=`pwd`
+  - printenv PATH
   #Install self signed cert
   - sudo cp ssl/server.crt /usr/local/share/ca-certificates/certificate.crt
   - sudo update-ca-certificates
